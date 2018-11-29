@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.box,
+			.code {
+				margin: 0 auto;
+				width: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<table>
+				<tr>
+					<td width="50">show_name</td>
+					<td width="200"><input type="text" id="show_name" /></td>
+				</tr>
+				<tr>
+					<td width="50">parentID</td>
+					<td width="200"><input type="text" id="parentId" /></td>
+				</tr>
+				<tr>
+					<td width="50">CODE</td>
+					<td width="200"><input type="text" id="code" /></td>
+				</tr>
+				<tr>
+					<td width="50">path</td>
+					<td width="200"><input type="text" id="path" /></td>
+				</tr>
+				<tr>
+					<td width="50">component</td>
+					<td width="200"><input type="text" id="component" /></td>
+				</tr>
+				<tr>
+					<td width="50">leaf</td>
+					<td width="200"><input type="text" value="1" id="leaf" /></td>
+				</tr>
+				<tr>
+					<td width="50">position</td>
+					<td width="200"><input type="text" value="0" id="position" /></td>
+				</tr>
+				<tr>
+					<td width="50">NAME</td>
+					<td width="200"><input type="text" id="name" /></td>
+				</tr>
+				<tr>
+					<td width="50"></td>
+					<td width="200"><button onclick="made()">开始制作</button></td>
+				</tr>
+			</table>
+		</div>
+		<div class="code">
+			<hr />
+			<code id="code-panel"></code>
+		</div>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/resource.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function made() {
+			//获取表单数据
+			var show_name = $("#show_name").val();
+			var code = $("#code").val();
+			var path = $("#path").val();
+			var component = $("#component").val();
+			var leaf = $("#leaf").val();
+			var p = $("#position").val();
+			var name = $("#name").val();
+			var parentId = $("#parentId").val();
+			//			console.log(resource)
+			var result = resource.replace('$showName', show_name);
+			result = result.replace('$showName', show_name);
+			result = result.replace('$showName', show_name);
+			result = result.replace('$parentId',parentId);
+			result = result.replace("$CODE", code);
+			result = result.replace("$CODE", code);
+			result = result.replace("$CODE", code);
+			result = result.replace("$CODE", code);
+			result = result.replace("$path", path);
+			result = result.replace("$component", component);
+			result = result.replace("$leaf", leaf);
+			result = result.replace("$position", p);
+			result = result.replace("$NAME", name);
+			console.log(result)
+			$("#code-panel").text(result);
+		}
+	</script>
+
+</html>
